@@ -2,7 +2,7 @@
 const puppeteer = require('puppeteer');
 const browserFetcher = puppeteer.createBrowserFetcher();
 var pageUrls = require('./pages.json');
-console.log("Starting to navigate to the pages in pages.json");
+console.log("Starting to crawl the page urls mentioned in pages.json");
 (async () => {
   const revisionInfo = await browserFetcher.download(848005);
 
@@ -19,7 +19,7 @@ console.log("Starting to navigate to the pages in pages.json");
     await page.screenshot({ path: `page${i+1}.png` });
     console.log(`Page ${i+1} - ${url}`);
   }
-    
+  console.log("Finished to crawling pages");  
   await browser.close();
 })();
 
