@@ -8,7 +8,7 @@ console.log("Starting to crawl the page urls mentioned in pages.json");
   console.log("Chromium browser is available now");
   const browser = await puppeteer.launch({
         executablePath: revisionInfo.executablePath,
-        headless: true
+        headless: false
       });
   //const browser = await puppeteer.launch();
   const page = await browser.newPage();
