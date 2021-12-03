@@ -19,7 +19,7 @@ console.log("Starting to crawl the page urls mentioned in pages.json");
   for(var i=0;i<pageUrls.length;i++){
     let url = pageUrls[i];
     await page.goto(url);
-    //await autoScroll(page);
+    await autoScroll(page);
     await page.screenshot({ path: `page${i+1}.png` });
     console.log(`Page ${i+1} - ${url} - finished`);
   }
