@@ -14,6 +14,7 @@ console.log("Starting to crawl the page urls mentioned in pages.json");
   const page = await browser.newPage();
   await page.setViewport({ width: 1366, height: 768});
   await page.setDefaultNavigationTimeout(0);
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36')
 
   for(var i=0;i<pageUrls.length;i++){
     let url = pageUrls[i];
