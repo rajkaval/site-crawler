@@ -12,12 +12,14 @@ console.log("Starting to crawl the page urls mentioned in pages.json");
   //const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.setViewport({ width: 1366, height: 768});
+  await page.setDefaultNavigationTimeout(0);
+
   for(var i=0;i<pageUrls.length;i++){
     let url = pageUrls[i];
     await page.goto(url);
     await autoScroll(page);
     await page.screenshot({ path: `page${i+1}.png` });
-    console.log(`Page ${i+1} - ${url}`);
+    console.log(`Page ${i+1} - ${url} - finished`);
   }
   console.log("Finished to crawling pages");  
   await browser.close();
